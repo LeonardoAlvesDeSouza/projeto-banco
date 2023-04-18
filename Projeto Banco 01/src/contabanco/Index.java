@@ -23,7 +23,7 @@ public class Index {
 
 		switch (num) {
 		case 1:
-			System.out.println("Ainda não existe conta.");
+			System.out.println("Ainda não existe conta!");
 			break;
 		case 2:
 			System.out.println("Ainda não existe saldo em conta disponível");

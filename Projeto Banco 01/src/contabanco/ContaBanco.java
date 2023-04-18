@@ -75,7 +75,7 @@ public class ContaBanco {
 
 	public void fecharConta() {
 		if (this.getSaldo() < 0) {
-			System.out.println("ERRO: Você não pode fechar sua conta pois existem débitos pendentes.");
+			System.out.println("ERRO: Você não pode fechar sua conta pois existem débitos pendentes!");
 		} else if (this.getSaldo() >= 0) {
 			this.setStatus(false);
 		}
