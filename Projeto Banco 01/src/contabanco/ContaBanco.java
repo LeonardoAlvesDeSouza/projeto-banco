@@ -45,7 +45,7 @@ public class ContaBanco {
 		this.saldo += saldo;
 	}
 
-	public boolean isStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 
@@ -58,6 +58,8 @@ public class ContaBanco {
 			if (this.tipo != null || this.tipo != null) {
 				if (this.tipo.equals("cc"))
 					setSaldo(50);
+				else if (this.tipo.equals("cp"))
+					setSaldo(150);
 				System.out.println("Conta Nº " + this.numConta + ", criada com sucesso!");
 				System.out.println("--------Dados básicos--------");
 				System.out.println("Cliente: " + this.dono);
@@ -76,23 +78,38 @@ public class ContaBanco {
 	public void fecharConta() {
 		if (this.getSaldo() < 0) {
 			System.out.println("ERRO: Você não pode fechar sua conta pois existem débitos pendentes!");
-		} else if (this.getSaldo() >= 0) {
-			this.setStatus(false);
+		} else if (this.getSaldo() > 0) {
+			System.out.println("Sua conta possui dinheiro em conta, deseja sacar todo o valor ?");
+		} else {
+			setStatus(false);
 		}
 	}
 
 	public void depositar(float valor) {
-		if (valor > 0) {
-
+		if (getStatus()) {
+			setSaldo(getSaldo() + valor);
+		} else {
+			System.out.println("Impossível depositar");
 		}
 	}
 
-	public void sacar() {
+	public void sacar(float valor) {
+		if (valor > 0 && getSaldo() > 0 && getStatus() && getSaldo() > valor) {
+			setSaldo(- valor);
+		} else {
+			System.out.println("Valor para saque não permitido");
+		}
 
 	}
 
 	public void pagarMensalidade() {
-
+		if (getSaldo() >= 30 && getStatus()) {
+			setSaldo(- 30);
+			System.out.println("Pagamento de mensalidade realizado com sucesso!");
+			System.out.println("Saldo atual: " + getSaldo());
+		} else {
+			System.out.println("Para pagamento de mensalidade seu saldo deve ser superior ao valor da mensalidade.");
+		}
 	}
 
 }
