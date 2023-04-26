@@ -13,7 +13,7 @@ public class Index {
 		cc0.setStatus(true);
 		cc0.setTipo("cc");
 		
-		System.out.println("Bem vindo ao sistema bancário pessoal, selecione uma das opções para atendimento:");
+		System.out.println("Bem vindo ao sistema bancário pessoal, selecione uma das opções para atendimento: ");
 		System.out.println("");
 		
 		Scanner scan = new Scanner(System.in);
