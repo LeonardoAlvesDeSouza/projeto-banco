@@ -89,7 +89,7 @@ public class ContaBanco {
 		if (getStatus()) {
 			setSaldo(getSaldo() + valor);
 		} else {
-			System.out.println("Impossível depositar");
+			System.out.println("Impossível depositar!");
 		}
 	}
 
