@@ -8,7 +8,6 @@ public class ContaBanco {
 	private boolean status;
 
 	public ContaBanco() {
-		super();
 		this.setSaldo(0);
 		this.setStatus(false);
 	}
