@@ -53,19 +53,19 @@ public class ContaBanco {
 	}
 
 	public void abirConta() {
-		if (this.numConta > 0 && this.tipo != null && this.dono != null && status == false) {
-			if (this.tipo != null || this.tipo != null) {
-				if (this.tipo.equals("cc"))
+		if (this.getNumConta() > 0 && this.getTipo() != null && this.getDono() != null && this.getStatus() == false) {
+			if (this.getTipo() != null || this.getTipo() != null) {
+				if (this.getTipo().equals("cc"))
 					setSaldo(50);
-				else if (this.tipo.equals("cp"))
-					setSaldo(150);
-				System.out.println("Conta Nº " + this.numConta + ", criada com sucesso!");
+				else if (this.getTipo().equals("cp"))
+					this.setSaldo(150);
+				System.out.println("Conta Nº " + this.getNumConta() + ", criada com sucesso!");
 				System.out.println("--------Dados básicos--------");
-				System.out.println("Cliente: " + this.dono);
-				System.out.println("Tipo de conta: " + (this.tipo.equals("cc") ? "Conta Corrente" : "Conta Poupança"));
-				System.out.println("Saldo disponível: " + this.saldo);
-				setStatus(true);
-				System.out.println("Status da conta: " + (this.status ? "Ativada" : "Desativada"));
+				System.out.println("Cliente: " + this.getDono());
+				System.out.println("Tipo de conta: " + (this.getTipo().equals("cc") ? "Conta Corrente" : "Conta Poupança"));
+				System.out.println("Saldo disponível: " + this.getSaldo());
+				this.setStatus(true);
+				System.out.println("Status da conta: " + (this.getStatus() ? "Ativada" : "Desativada"));
 			}
 		} else {
 			System.out.println(
@@ -80,21 +80,21 @@ public class ContaBanco {
 		} else if (this.getSaldo() > 0) {
 			System.out.println("Sua conta possui dinheiro em conta, deseja sacar todo o valor ?");
 		} else {
-			setStatus(false);
+			this.setStatus(false);
 		}
 	}
 
 	public void depositar(float valor) {
-		if (getStatus()) {
-			setSaldo(getSaldo() + valor);
+		if (this.getStatus()) {
+			setSaldo(this.getSaldo() + valor);
 		} else {
 			System.out.println("Impossível depositar!");
 		}
 	}
 
 	public void sacar(float valor) {
-		if (valor > 0 && getSaldo() > 0 && getStatus() && getSaldo() > valor) {
-			setSaldo(- valor);
+		if (valor > 0 && this.getSaldo() > 0 && this.getStatus() && this.getSaldo() > valor) {
+			this.setSaldo(- valor);
 		} else {
 			System.out.println("Valor para saque não permitido");
 		}
@@ -102,10 +102,10 @@ public class ContaBanco {
 	}
 
 	public void pagarMensalidade() {
-		if (getSaldo() >= 30 && getStatus()) {
-			setSaldo(- 30);
+		if (this.getSaldo() >= 30 && this.getStatus()) {
+			this.setSaldo(- 30);
 			System.out.println("Pagamento de mensalidade realizado com sucesso!");
-			System.out.println("Saldo atual: " + getSaldo());
+			System.out.println("Saldo atual: " + this.getSaldo());
 		} else {
 			System.out.println("Para pagamento de mensalidade seu saldo deve ser superior ao valor da mensalidade.");
 		}
