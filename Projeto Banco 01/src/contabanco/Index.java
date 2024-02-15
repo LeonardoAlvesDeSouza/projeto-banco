@@ -13,12 +13,12 @@ public class Index {
 		cc0.setStatus(true);
 		cc0.setTipo("cc");
 		
-		System.out.println("Bem vindo ao sistema bancário pessoal, selecione uma das opções para atendimento: ");
+		System.out.println("Bem vindo ao novo sistema bancario pessoal, selecione uma das opções para atendimento: ");
 		System.out.println("");
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("1: Status da conta opa");
+		System.out.println("1: Status da conta");
 		System.out.println("2: Consultar saldo em conta");
 		System.out.println("3: Abrir conta");
 		System.out.println("4: Sacar");
