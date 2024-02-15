@@ -18,7 +18,7 @@ public class Index {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("1: Status da conta");
+		System.out.println("1: Status da conta opa");
 		System.out.println("2: Consultar saldo em conta");
 		System.out.println("3: Abrir conta");
 		System.out.println("4: Sacar");
